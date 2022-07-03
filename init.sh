@@ -46,9 +46,9 @@ fi
 cd $dir
 mkdir server
 cd ./server
-wget -O build.sh https://github.com/mcresweb/production-linux/blob/main/build-server.sh
+wget -O build.sh https://raw.githubusercontent.com/mcresweb/production-linux/main/build-server.sh
 sudo chmod a+x ./build.sh
-wget -O application.properties https://github.com/mcresweb/production-linux/blob/main/server-config.properties
+wget -O application.properties https://raw.githubusercontent.com/mcresweb/production-linux/main/server-config.properties
 bash ./build.sh
 rmsg "成功构建server, 稍后您需要进入 $dir/server/application.properties 手动调整您的数据库信息"
 
@@ -56,21 +56,21 @@ rmsg "成功构建server, 稍后您需要进入 $dir/server/application.properti
 cd $dir
 git clone https://github.com/mcresweb/web.git web
 cd ./web
-wget -O build.sh https://github.com/mcresweb/production-linux/blob/main/build-web.sh
+wget -O build.sh https://raw.githubusercontent.com/mcresweb/production-linux/main/build-web.sh
 sudo chmod a+x ./build.sh
 npm run build
 gmsg "成功构建web, 稍后您可以进入 $dir/web/config.yml 手动调整配置"
 
 # 创建nginx
 cd $dir
-wget -qO- https://github.com/mcresweb/production-linux/blob/main/install-nginx.sh | bash
+wget -qO- https://raw.githubusercontent.com/mcresweb/production-linux/main/install-nginx.sh | bash
 gmsg "成功构建nginx, 稍后您可以进入 $dir/nginx/conf/nginx.conf 手动调整配置"
 
 
 #下载脚本
 cd $dir
-wget -O start.sh https://github.com/mcresweb/production-linux/blob/main/start.sh
-wget -O close.sh https://github.com/mcresweb/production-linux/blob/main/close.sh
+wget -O start.sh https://raw.githubusercontent.com/mcresweb/production-linux/main/start.sh
+wget -O close.sh https://raw.githubusercontent.com/mcresweb/production-linux/main/close.sh
 sudo chmod a+x ./start.sh
 sudo chmod a+x ./close.sh
 bmsg "成功初始化项目"

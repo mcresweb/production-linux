@@ -15,7 +15,7 @@ make install
 
 #配置
 cd ./conf
-wget -O nginx.conf https://github.com/mcresweb/production-linux/blob/main/nginx.conf
+wget -O nginx.conf https://raw.githubusercontent.com/mcresweb/production-linux/main/nginx.conf
 cd ..
 
 
